@@ -289,8 +289,10 @@ fi
 
 if [ ! -d "/var/www/html/wp-content/plugins/application-server-management-protocol" ]; then
 git clone https://github.com/application-server-management-protocol/wordpress-integration.git /var/www/html/wp-content/plugins/application-server-management-protocol
+fi
+
+cd /var/www/html/wp-content/plugins/application-server-management-protocol && git pull
 cd /var/www/html/wp-content/plugins/application-server-management-protocol && composer install
 chown -R 1000:1000 /var/www/html/wp-content
-fi
 
 exec "$@"
