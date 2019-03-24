@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+
+  wordpress:
+    image: wordpress:5.1
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: asmp
+    volumes:
+      - ./plugins:/var/www/html/wp-content/plugins
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: asmp
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
