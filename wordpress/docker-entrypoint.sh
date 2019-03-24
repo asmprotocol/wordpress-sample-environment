@@ -288,7 +288,7 @@ EOPHP
 fi
 
 if [ ! -d "/var/www/html/wp-content/plugins/application-server-management-protocol" ]; then
-git clone https://github.com/application-server-management-protocol/wordpress-integration.git /var/www/html/wp-content/plugins/application-server-management-protocol
+git clone https://github.com/asmprotocol/wordpress-integration.git /var/www/html/wp-content/plugins/application-server-management-protocol
 fi
 
 cd /var/www/html/wp-content/plugins/application-server-management-protocol && git pull

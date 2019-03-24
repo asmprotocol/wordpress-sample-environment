@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.3
 
 # install the PHP extensions we need
 RUN set -ex; \
@@ -34,8 +34,6 @@ RUN apt-get update && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN git clone https://github.com/application-server-management-protocol/sample-server.git /var/www/html
+RUN git clone https://github.com/asmprotocol/sample-server.git /var/www/html
 
-RUN composer install
-
-COPY apache/docker-php.conf /etc/apache2/conf-available/docker-php.conf
+RUN cd /var/www/html && composer install

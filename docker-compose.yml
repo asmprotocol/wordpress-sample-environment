@@ -6,7 +6,7 @@ services:
     build:
       context: ./wordpress
     ports:
-      - 9000:80
+      - 8080:80
     environment:
       WORDPRESS_DB_HOST: mysql
       WORDPRESS_DB_USER: user
@@ -18,9 +18,9 @@ services:
   server:
     build:
       context: ./server
-    command: bash -c "git pull && composer install && apache2-foreground"
+    command: bash -c "cd /var/www/html && git pull && composer install && php src/main.php"
     ports:
-      - 5000:80
+      - 5000:8080
 
   mysql:
     image: mysql:5.7
