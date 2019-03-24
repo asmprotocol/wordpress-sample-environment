@@ -1,11 +1,9 @@
-# WordPress sample Docker environment
+# WordPress and Rest api sample Docker environment
 
 ## install 
 
  docker-compose up 
 
-now you can find Wordpress at http://localhost:9000 .
-
-Install Wordpress and then push the plugin in the plugins folder.
+now you can find Wordpress at http://localhost:8080 and the Rest api at http://localhost:5000 .
 
 with docker-compose up you also update repos and composer
