@@ -12,6 +12,8 @@ services:
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: asmp
+      ASMP_DISCOVERY_VERSION: v1
+      ASMP_DISCOVERY_ENDPOINT: http://localhost:5000
     volumes:
       - ./plugins:/var/www/html/wp-content/plugins
 

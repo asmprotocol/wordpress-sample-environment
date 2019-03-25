@@ -81,5 +81,8 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
     && ln -s /usr/local/bin/docker-entrypoint.sh /
 
+RUN echo 'export ASMP_DISCOVERY_VERSION=$ASMP_DISCOVERY_VERSION' >> /etc/bash.bashrc
+RUN echo 'export ASMP_DISCOVERY_ENDPOINT=$ASMP_DISCOVERY_ENDPOINT' >> /etc/bash.bashrc
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

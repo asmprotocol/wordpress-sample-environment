@@ -289,8 +289,6 @@ fi
 
 if [ ! -d "/var/www/html/wp-content/plugins/application-server-management-protocol" ]; then
 git clone https://github.com/asmprotocol/wordpress-integration.git /var/www/html/wp-content/plugins/application-server-management-protocol
-echo 'export ASMP_DISCOVERY_VERSION="v1"' >> /etc/bash.bashrc
-echo 'export ASMP_DISCOVERY_ENDPOINT="http://localhost:5000"' >> /etc/bash.bashrc
 wp --info
 fi
 
