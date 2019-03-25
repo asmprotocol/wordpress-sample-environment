@@ -72,6 +72,10 @@ RUN apt-get update && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+chmod +x wp-cli.phar && \
+mv wp-cli.phar /usr/local/bin/wp
+
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
